@@ -3,7 +3,7 @@
 version="1.0.0"
 rev="1" # rev="1"
 
-name="lua-struct-$version-$rev"
+name="endel-struct-$version-$rev"
 
 tmp="$TEMPDIR"
 if [ -z "$tmp" ]; then
@@ -22,7 +22,7 @@ tar -czvpf "$name.src.rock" \
     --exclude "$name/.git*" \
     --exclude "$name/*.o" \
     --exclude "$name/*.so" \
-    --exclude "$name/lua-struct.rockspec" \
+    --exclude "$name/endel-struct.rockspec" \
     --exclude "$name/rockspecs" \
     --exclude "$name/server" \
     --exclude "$name/coronasdk-example" \
@@ -34,7 +34,7 @@ tar -czvpf "$name.src.rock" \
     "$name"
 
 echo "Creating $tmp/$name.rockspec"
-cat "$src/lua-struct.rockspec" | \
+cat "$src/endel-struct.rockspec" | \
     sed \
       -e s/@VERSION@/$version/ \
       -e s/@REVISION@/$rev/ > \
